@@ -13,6 +13,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/Myhome_page': (context) => const MyHomePage(),
+        '/Search_screen': (context) => const MyHomePage(),
+        '/Create_page': (context) => const CreatePostScreen(),
+        '/Bases_creen': (context) => const MyHomePage(),
+        '/Profile_screen': (context) => const ProfileScreen(),
+        '/Notifications': (context) => const NotificationsScreen(),
+      },
       title: 'Flutter Combined App',
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
@@ -255,11 +263,12 @@ class MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
   final List<Widget> _children = [
-    MyHomePage(),
+    const MyHomePage(),
     const SearchScreen(),
     const CreatePostScreen(),
     const BaseScreen(),
     const NotificationsScreen(),
+    const ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {
