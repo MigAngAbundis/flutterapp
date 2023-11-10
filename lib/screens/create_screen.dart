@@ -12,7 +12,7 @@ class CreatePostScreen extends StatelessWidget {
             onPressed: () {
               // Función para el botón Siguiente
             },
-            child: Text(
+            child: const Text(
               'Siguiente',
               style: TextStyle(color: Colors.white),
             ),
