@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:para/theme/style.dart';
+//import 'package:para/theme/style.dart';
 
 class UserPost extends StatefulWidget {
   final String name;

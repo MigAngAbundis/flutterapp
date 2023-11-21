@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:para/screens/notifications_screen.dart';
 import 'package:para/theme/style.dart';
 import 'package:para/screens/home_screen.dart';
 import 'package:para/screens/search_screen.dart';
 import 'package:para/screens/create_screen.dart';
 import 'package:para/screens/perfil_screen.dart';
-import 'package:para/widgets/drawer_para.dart';
+import 'package:para/screens/base_screen.dart';
 
 class NavigationScreen extends StatelessWidget {
   const NavigationScreen({super.key});
@@ -30,8 +31,8 @@ class _NavigationScreenStatefulWidgetState
     HomeScreen(),
     SearchScreen(),
     CreatePostScreen(),
-    ProfileScreen(),
-    ProfileScreen(),
+    BaseScreen(),
+    NotificationScreen(),
   ];
 
   @override
@@ -97,11 +98,11 @@ class _NavigationScreenStatefulWidgetState
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.book),
-              label: 'Perfil',
+              label: 'Base',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Perfil',
+              icon: Icon(Icons.notifications_outlined),
+              label: 'Notificaciones',
             ),
           ],
           type: BottomNavigationBarType.fixed,

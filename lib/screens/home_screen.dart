@@ -11,14 +11,16 @@ class HomeScreen extends StatefulWidget {
 
 class HomeScreenState extends State<HomeScreen> {
   var scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Style.backgroundColor,
-      endDrawer: SizedBox(
-          width: MediaQuery.of(context).size.width * 0.75,
-          child: const DrawerPara()),
+      drawer: SizedBox(
+        width: MediaQuery.of(context).size.width * 0.75,
+        child: const DrawerPara(),
+      ),
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -32,39 +34,24 @@ class HomeScreenState extends State<HomeScreen> {
             ),
             backgroundColor: Style.backgroundColor,
             elevation: 10,
-            centerTitle: false,
+            centerTitle: true,
             titleSpacing: 20,
-            actions: [
-              IconButton(
-                icon: const Icon(Icons.search),
-                tooltip: 'Buscar',
-                color: Style.text,
-                onPressed: () {},
-              ),
-              const SizedBox(
-                width: 10.0,
-              ),
-              IconButton(
-                icon: const Icon(Icons.notifications_outlined),
-                tooltip: 'Notificaciones',
-                color: Style.text,
-                onPressed: () {},
-              ),
-              const SizedBox(
-                width: 10.0,
-              ),
-              IconButton(
-                icon: const Icon(Icons.menu),
-                tooltip: 'Menu',
-                color: Style.text,
-                onPressed: () {
-                  scaffoldKey.currentState?.openEndDrawer();
+            leading: Padding(
+              padding: const EdgeInsets.only(
+                  left:
+                      14.0), // Adjust left padding to move the CircleAvatar a bit to the right
+              child: InkWell(
+                onTap: () {
+                  scaffoldKey.currentState?.openDrawer();
                 },
+                child: CircleAvatar(
+                  radius: 16, // Adjust the size by setting the radius
+                  backgroundImage: NetworkImage(
+                    'https://lopezobrador.org.mx/wp-content/uploads/2019/03/AMLO-Perfil-100Dias-300x300.jpg', // Replace with your actual image URL
+                  ),
+                ),
               ),
-              const SizedBox(
-                width: 20.0,
-              ),
-            ],
+            ),
           ),
           const SliverToBoxAdapter(
             child: Column(
