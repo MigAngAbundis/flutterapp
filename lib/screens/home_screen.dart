@@ -3,9 +3,11 @@ import 'package:para/widgets/drawer_para.dart';
 import 'package:para/widgets/user_post.dart';
 import 'package:para/theme/style.dart';
 
+final items = ['Siguiendo', '↗ Popular', 'Para ti', 'Contra ti'];
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
-
+  static const routeName = '/Home';
   State<StatefulWidget> createState() => HomeScreenState();
 }
 
@@ -19,7 +21,7 @@ class HomeScreenState extends State<HomeScreen> {
       backgroundColor: Style.backgroundColor,
       drawer: SizedBox(
         width: MediaQuery.of(context).size.width * 0.75,
-        child: const DrawerPara(),
+        child: const UnifiedDrawer(),
       ),
       body: CustomScrollView(
         slivers: [
